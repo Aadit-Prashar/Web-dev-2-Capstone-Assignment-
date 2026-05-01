@@ -1,0 +1,26 @@
+.product-card__wish {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  transition: transform 0.15s;
+}
+
+.product-card__wish:hover {
+  transform: scale(1.15);
+}
+
+/* Make product-card position relative if not already */
+.product-card {
+  position: relative;
+}
