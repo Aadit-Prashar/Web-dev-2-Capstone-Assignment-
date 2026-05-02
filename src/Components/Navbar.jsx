@@ -1,32 +1,38 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "./CartContext";
 import { useWishlist } from "./WishlistContext";
 import "./Navbar.css";
 
-export default function Navbar() {
+export default function Navbar({ searchQuery, setSearchQuery }) {
   const { totalItems } = useCart();
   const { wishlist } = useWishlist();
-  const [search, setSearch] = useState("");
+  const navigate = useNavigate();
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    navigate("/");
+  };
 
   return (
     <nav className="navbar">
       <Link to="/" className="navbar__logo">🛒 ShopKart</Link>
-      <div className="navbar__search">
+
+      <form className="navbar__search" onSubmit={handleSearch}>
         <input
           type="text"
           placeholder="Search products..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
         />
-        <button>Search</button>
-      </div>
+        <button type="submit">Search</button>
+      </form>
+
       <div className="navbar__actions">
         <Link to="/wishlist" className="navbar__link">
           🤍 Wishlist
           {wishlist.length > 0 && <span className="navbar__badge">{wishlist.length}</span>}
         </Link>
-        <Link to="/" className="navbar__link">
+        <Link to="/cart" className="navbar__link">
           🛒 Cart
           {totalItems > 0 && <span className="navbar__badge">{totalItems}</span>}
         </Link>
