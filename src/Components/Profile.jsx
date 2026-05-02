@@ -3,11 +3,11 @@ import { useWishlist } from "./WishlistContext";
 import "./Profile.css";
 
 const mockUser = {
-  name: "Rahul Sharma",
-  email: "rahul.sharma@email.com",
-  phone: "+91 98765 43210",
+  name: "Aadit Prashar",
+  email: "prasharaadit@gmail.com",
+  phone: "+91 8816868411",
   avatar: "RS",
-  memberSince: "January 2023",
+  memberSince: "January 2026",
   orders: [
     { id: "#ORD-4821", date: "Apr 18, 2026", status: "Delivered", total: 79.97 },
     { id: "#ORD-4756", date: "Mar 29, 2026", status: "Shipped", total: 49.99 },
