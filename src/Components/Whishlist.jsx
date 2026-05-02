@@ -2,7 +2,7 @@ import { useWishlist } from "./WishlistContext";
 import { useCart } from "./CartContext";
 import "./Wishlist.css";
 
-export default function Whishlist() {
+export default function Wishlist() {
   const { wishlist, removeFromWishlist } = useWishlist();
   const { addToCart } = useCart();
 
